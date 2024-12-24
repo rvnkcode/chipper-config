@@ -73,5 +73,14 @@
                                   &kp LGUI  &to 0   &kp ENTER    &kp SPACE   &trans        &kp RALT
             >;
         };
+    
+        sys_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans         &trans       &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &bootloader    &bootloader  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &sys_reset     &sys_reset   &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans         &trans       &trans  &trans
+            >;
+        };
     };
 };
