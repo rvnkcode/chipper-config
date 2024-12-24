@@ -22,6 +22,11 @@
             bindings = <&kp LA(TAB)>;
             key-positions = <0 1>;
         };
+        
+        cmb_cmd_enter {
+            bindings = <&kp LG(ENTER)>;
+            key-positions = <19 20>;
+        };'
     };
 
     keymap {
@@ -53,7 +58,7 @@
             display-name = "Number";
             bindings = <
 &kp TAB    &kp N1  &kp N2  &kp N3            &kp N4     &kp N5        &kp N6     &kp N7    &kp N8       &kp N9     &kp N0  &kp BSPC
-&kp LCTRL  &trans  &trans  &kp LANG_HANGEUL  &kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT  &kp CAPS  &kp LEFT   &kp DOWN   &kp UP  &kp RIGHT  &trans  &kp DEL
+&kp LCTRL  &trans  &trans  &kp LANG_HANGEUL  &kp GLOBE  &kp CAPS      &kp LEFT   &kp DOWN  &kp UP       &kp RIGHT  &trans  &kp DEL
 &kp LSHFT  &trans  &trans  &trans            &trans     &kp INSERT    &kp HOME   &kp END   &kp PAGE_UP  &kp PG_DN  &trans  &kp ESC
                            &kp LGUI          &trans     &kp ENTER     &kp SPACE  &trans    &kp LALT
             >;
