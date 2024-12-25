@@ -7,13 +7,13 @@
     combos {
         compatible = "zmk,combos";
 
-        cmb_grave {
-            bindings = <&kp LA(GRAVE)>;
+        cmb_ctrl_grave {
+            bindings = <&kp LC(GRAVE)>;
             key-positions = <13 17>;
             layers = <0>;
         };
 
-        cmb_alt-f4 {
+        cmb_alt_f4 {
             bindings = <&kp LA(F4)>;
             key-positions = <4 3>;
             layers = <0>;
