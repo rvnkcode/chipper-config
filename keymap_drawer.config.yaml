@@ -16,6 +16,13 @@ parse_config:
     "&hmr RCTRL E": {t: E, h: CTRL}
     "&hmr LALT I": {t: I, h: ALT}
     "&hmr RGUI O": {t: O, h: GUI}
+    # Clipboard keys. keymap-drawer runs these keys through the keymap's preprocessor,
+    # so the U_* macros from chipper.keymap work here.
+    U_UND: UNDO
+    U_CUT: CUT
+    U_CPY: COPY
+    U_PST: PASTE
+    U_RDO: REDO
     # Custom behaviors
     "&han_tog": HAN
     "&caps_word": CAPW
@@ -32,4 +39,20 @@ parse_config:
     "&msc SCRL_DOWN": WH_D
     "&msc SCRL_UP": WH_U
     "&msc SCRL_RIGHT": WH_R
+    "&mo ACCEL": ACCEL
+    # Same names as the layer comments in chipper.keymap
     "&kp PAUSE_BREAK": PAUS
+    "&kp PSCRN": PSCR
+    "&kp PG_DN": PGDN
+    "&kp PG_UP": PGUP
+    "&kp C_PP": PLAY
+    # Media layer: mode toggles, output and Bluetooth profiles
+    "&tog MAC": {t: MAC, h: toggle}
+    "&tog KOR": {t: KOR, h: toggle}
+    "&out OUT_TOG": OUT
+    "&bt BT_CLR": BTCLR
+    "&bt BT_SEL 0": BT0
+    "&bt BT_SEL 1": BT1
+    "&bt BT_SEL 2": BT2
+    "&bt BT_SEL 3": BT3
+    "&bt BT_SEL 4": BT4
