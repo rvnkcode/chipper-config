@@ -13,19 +13,19 @@ layers:
   - Y
   - ''''
   - BSPC
-  - LCTRL
-  - {t: A, h: LGUI}
-  - {t: R, h: LALT}
-  - {t: S, h: LCTRL}
-  - {t: T, h: LSHFT}
+  - CTRL
+  - {t: A, h: GUI}
+  - {t: R, h: ALT}
+  - {t: S, h: CTRL}
+  - {t: T, h: SHIFT}
   - G
   - M
-  - {t: N, h: RSHFT}
-  - {t: E, h: RCTRL}
-  - {t: I, h: LALT}
-  - {t: O, h: RGUI}
-  - '&han_tog'
-  - LSHFT
+  - {t: N, h: SHIFT}
+  - {t: E, h: CTRL}
+  - {t: I, h: ALT}
+  - {t: O, h: GUI}
+  - HAN
+  - SHIFT
   - {t: Z, h: Button}
   - X
   - C
@@ -57,9 +57,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: A, h: LCTRL}
+  - {t: A, h: CTRL}
   - {t: ▽, type: trans}
-  - {t: S, h: LGUI}
+  - {t: S, h: GUI}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -100,15 +100,15 @@ layers:
   - B
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: A, h: LGUI}
-  - {t: S, h: LALT}
-  - {t: D, h: LCTRL}
-  - {t: R, h: LSHFT}
+  - {t: A, h: GUI}
+  - {t: S, h: ALT}
+  - {t: D, h: CTRL}
+  - {t: R, h: SHIFT}
   - F
   - H
   - {t: M, h: RSHFT}
   - {t: K, h: RCTRL}
-  - {t: L, h: LALT}
+  - {t: L, h: ALT}
   - {t: N, h: RGUI}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -143,9 +143,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: A, h: LCTRL}
+  - {t: A, h: CTRL}
   - {t: ▽, type: trans}
-  - {t: D, h: LGUI}
+  - {t: D, h: GUI}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -186,16 +186,16 @@ layers:
   - Ctl+Z
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LGUI
-  - LALT
-  - LCTRL
-  - LSHFT
+  - GUI
+  - ALT
+  - CTRL
+  - SHIFT
   - ''
   - ''
-  - LSHFT
-  - LCTRL
-  - LALT
-  - LGUI
+  - SHIFT
+  - CTRL
+  - ALT
+  - GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: Ctl+Z, type: held}
@@ -209,15 +209,15 @@ layers:
   - Ctl+X
   - Ctl+Z
   - {t: ▽, type: trans}
-  - '&mkp MCLK'
-  - '&mkp LCLK'
-  - '&mkp RCLK'
-  - '&mkp RCLK'
-  - '&mkp LCLK'
-  - '&mkp MCLK'
+  - MCLK
+  - LCLK
+  - RCLK
+  - RCLK
+  - LCLK
+  - MCLK
   Nav:
   - {t: ▽, type: trans}
-  - '&td_boot'
+  - {t: BOOT, h: x2}
   - ''
   - ''
   - ''
@@ -229,16 +229,16 @@ layers:
   - Ctl+Z
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LGUI
-  - LALT
-  - LCTRL
-  - LSHFT
+  - GUI
+  - ALT
+  - CTRL
+  - SHIFT
   - ''
   - LEFT
   - DOWN
   - UP
   - RIGHT
-  - '&caps_word'
+  - CAPW
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
@@ -260,7 +260,7 @@ layers:
   - DEL
   Mouse:
   - {t: ▽, type: trans}
-  - '&td_boot'
+  - {t: BOOT, h: x2}
   - ''
   - ''
   - ''
@@ -272,15 +272,15 @@ layers:
   - Ctl+Z
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LGUI
-  - LALT
-  - LCTRL
-  - LSHFT
+  - GUI
+  - ALT
+  - CTRL
+  - SHIFT
   - Mouse_Accel
-  - '&mmv MOVE_LEFT'
-  - '&mmv MOVE_DOWN'
-  - '&mmv MOVE_UP'
-  - '&mmv MOVE_RIGHT'
+  - MS_L
+  - MS_D
+  - MS_U
+  - MS_R
   - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -289,21 +289,21 @@ layers:
   - ''
   - ''
   - ''
-  - '&msc SCRL_LEFT'
-  - '&msc SCRL_DOWN'
-  - '&msc SCRL_UP'
-  - '&msc SCRL_RIGHT'
+  - WH_L
+  - WH_D
+  - WH_U
+  - WH_R
   - ''
   - {t: ▽, type: trans}
   - ''
   - ''
   - {type: held}
-  - '&mkp RCLK'
-  - '&mkp LCLK'
-  - '&mkp MCLK'
+  - RCLK
+  - LCLK
+  - MCLK
   Media:
   - {t: ▽, type: trans}
-  - '&td_boot'
+  - {t: BOOT, h: x2}
   - {t: Mac, h: toggle}
   - {t: Korean, h: toggle}
   - ''
@@ -315,10 +315,10 @@ layers:
   - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LGUI
-  - LALT
-  - LCTRL
-  - LSHFT
+  - GUI
+  - ALT
+  - CTRL
+  - SHIFT
   - ''
   - PREV
   - VOL DN
@@ -355,7 +355,7 @@ layers:
   - ''
   - ''
   - ''
-  - '&td_boot'
+  - {t: BOOT, h: x2}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ;
@@ -364,10 +364,10 @@ layers:
   - '6'
   - '='
   - ''
-  - LSHFT
-  - LCTRL
-  - LALT
-  - LGUI
+  - SHIFT
+  - CTRL
+  - ALT
+  - GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '`'
@@ -398,7 +398,7 @@ layers:
   - ''
   - ''
   - ''
-  - '&td_boot'
+  - {t: BOOT, h: x2}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ':'
@@ -407,10 +407,10 @@ layers:
   - ^
   - +
   - ''
-  - LSHFT
-  - LCTRL
-  - LALT
-  - LGUI
+  - SHIFT
+  - CTRL
+  - ALT
+  - GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '~'
@@ -441,7 +441,7 @@ layers:
   - ''
   - ''
   - ''
-  - '&td_boot'
+  - {t: BOOT, h: x2}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F11
@@ -450,17 +450,17 @@ layers:
   - F6
   - SLCK
   - ''
-  - LSHFT
-  - LCTRL
-  - LALT
-  - LGUI
+  - SHIFT
+  - CTRL
+  - ALT
+  - GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F10
   - F1
   - F2
   - F3
-  - PAUSE BREAK
+  - PAUS
   - ''
   - ''
   - ''
@@ -530,16 +530,16 @@ layers:
   - Gui+Z
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LCTRL
+  - CTRL
   - {t: ▽, type: trans}
-  - LGUI
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LGUI
   - {t: ▽, type: trans}
-  - LCTRL
+  - {t: ▽, type: trans}
+  - GUI
+  - {t: ▽, type: trans}
+  - CTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: Gui+Z, type: held}
@@ -573,9 +573,9 @@ layers:
   - Gui+Z
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LCTRL
+  - CTRL
   - {t: ▽, type: trans}
-  - LGUI
+  - GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -616,9 +616,9 @@ layers:
   - Gui+Z
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LCTRL
+  - CTRL
   - {t: ▽, type: trans}
-  - LGUI
+  - GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -659,9 +659,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LCTRL
+  - CTRL
   - {t: ▽, type: trans}
-  - LGUI
+  - GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -709,9 +709,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LGUI
+  - GUI
   - {t: ▽, type: trans}
-  - LCTRL
+  - CTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -752,9 +752,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LGUI
+  - GUI
   - {t: ▽, type: trans}
-  - LCTRL
+  - CTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -795,9 +795,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LGUI
+  - GUI
   - {t: ▽, type: trans}
-  - LCTRL
+  - CTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -825,5 +825,5 @@ combos:
   k: Alt+F4
   l: [Base, Mac, Korean, Korean_Mac]
 - p: [17, 18]
-  k: '&caps_word'
+  k: CAPW
   l: [Base, Mac, Korean, Korean_Mac]
