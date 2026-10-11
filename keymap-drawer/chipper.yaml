@@ -174,16 +174,16 @@ layers:
   - {t: ▽, type: trans}
   Button:
   - {t: ▽, type: trans}
-  - Ctl+Z
-  - Ctl+X
-  - Ctl+C
-  - Ctl+V
-  - Ctl+Y
-  - Ctl+Y
-  - Ctl+V
-  - Ctl+C
-  - Ctl+X
-  - Ctl+Z
+  - UNDO
+  - CUT
+  - COPY
+  - PASTE
+  - REDO
+  - REDO
+  - PASTE
+  - COPY
+  - CUT
+  - UNDO
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - GUI
@@ -198,16 +198,16 @@ layers:
   - GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Ctl+Z, type: held}
-  - Ctl+X
-  - Ctl+C
-  - Ctl+V
-  - Ctl+Y
-  - Ctl+Y
-  - Ctl+V
-  - Ctl+C
-  - Ctl+X
-  - Ctl+Z
+  - {t: UNDO, type: held}
+  - CUT
+  - COPY
+  - PASTE
+  - REDO
+  - REDO
+  - PASTE
+  - COPY
+  - CUT
+  - UNDO
   - {t: ▽, type: trans}
   - MCLK
   - LCLK
@@ -222,11 +222,11 @@ layers:
   - ''
   - ''
   - ''
-  - Ctl+Y
-  - Ctl+V
-  - Ctl+C
-  - Ctl+X
-  - Ctl+Z
+  - REDO
+  - PASTE
+  - COPY
+  - CUT
+  - UNDO
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - GUI
@@ -247,8 +247,8 @@ layers:
   - ''
   - ''
   - HOME
-  - PG DN
-  - PG UP
+  - PGDN
+  - PGUP
   - END
   - INS
   - {t: ▽, type: trans}
@@ -265,18 +265,18 @@ layers:
   - ''
   - ''
   - ''
-  - Ctl+Y
-  - Ctl+V
-  - Ctl+C
-  - Ctl+X
-  - Ctl+Z
+  - REDO
+  - PASTE
+  - COPY
+  - CUT
+  - UNDO
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - GUI
   - ALT
   - CTRL
   - SHIFT
-  - Mouse_Accel
+  - ACCEL
   - MS_L
   - MS_D
   - MS_U
@@ -304,12 +304,12 @@ layers:
   Media:
   - {t: ▽, type: trans}
   - {t: BOOT, h: x2}
-  - {t: Mac, h: toggle}
-  - {t: Korean, h: toggle}
+  - {t: MAC, h: toggle}
+  - {t: KOR, h: toggle}
   - ''
   - ''
-  - BT CLR
-  - {t: BT, h: '4'}
+  - BTCLR
+  - BT4
   - ''
   - ''
   - ''
@@ -332,17 +332,17 @@ layers:
   - ''
   - ''
   - ''
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - OUT TOG
+  - BT0
+  - BT1
+  - BT2
+  - BT3
+  - OUT
   - {t: ▽, type: trans}
   - {type: held}
   - ''
   - ''
   - STOP
-  - PP
+  - PLAY
   - MUTE
   Num:
   - {t: ▽, type: trans}
@@ -436,7 +436,7 @@ layers:
   - F7
   - F8
   - F9
-  - PSCRN
+  - PSCR
   - ''
   - ''
   - ''
@@ -491,7 +491,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -512,7 +511,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
