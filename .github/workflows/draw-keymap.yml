@@ -7,6 +7,7 @@ on:
       - "config/**/*.keymap"
       - ".github/workflows/draw-keymap.yml"
       - "keymap-drawer/chipper_korean.yaml"
+      - "keymap_drawer.config.yaml"
 
 jobs:
   draw:

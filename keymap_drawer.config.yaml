@@ -1,0 +1,35 @@
+# keymap-drawer config for the keymap drawing (read by .github/workflows/draw-keymap.yml).
+# Only raw_binding_map is set: setting zmk_keycode_map would replace keymap-drawer's
+# default symbol map instead of extending it.
+parse_config:
+  raw_binding_map:
+    # Modifiers: same short names as the Korean layer (keymap-drawer/chipper_korean.yaml)
+    "&kp LGUI": GUI
+    "&kp LALT": ALT
+    "&kp LCTRL": CTRL
+    "&kp LSHFT": SHIFT
+    "&hml LGUI A": {t: A, h: GUI}
+    "&hml LALT R": {t: R, h: ALT}
+    "&hml LCTRL S": {t: S, h: CTRL}
+    "&hml LSHFT T": {t: T, h: SHIFT}
+    "&hmr RSHFT N": {t: N, h: SHIFT}
+    "&hmr RCTRL E": {t: E, h: CTRL}
+    "&hmr LALT I": {t: I, h: ALT}
+    "&hmr RGUI O": {t: O, h: GUI}
+    # Custom behaviors
+    "&han_tog": HAN
+    "&caps_word": CAPW
+    "&td_boot": {t: BOOT, h: x2}
+    # Mouse keys
+    "&mkp LCLK": LCLK
+    "&mkp RCLK": RCLK
+    "&mkp MCLK": MCLK
+    "&mmv MOVE_LEFT": MS_L
+    "&mmv MOVE_DOWN": MS_D
+    "&mmv MOVE_UP": MS_U
+    "&mmv MOVE_RIGHT": MS_R
+    "&msc SCRL_LEFT": WH_L
+    "&msc SCRL_DOWN": WH_D
+    "&msc SCRL_UP": WH_U
+    "&msc SCRL_RIGHT": WH_R
+    "&kp PAUSE_BREAK": PAUS
