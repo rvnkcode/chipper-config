@@ -1,0 +1,10 @@
+# Jamo labels for the Korean (Dujul-e) layer in the keymap drawing.
+# keymap-drawer replaces the parsed "Korean" layer with this one, because the firmware
+# sends Dubeolsik keycodes (Q, W, G, ...) that would otherwise be drawn as Latin letters.
+# Keep in sync with kor_layer in config/boards/shields/chipper/chipper.keymap.
+layers:
+  Korean:
+    - [{t: ▽, type: trans}, {t: ㅂ, s: ㅃ}, {t: ㅈ, s: ㅉ}, {t: ㄷ, s: ㄸ}, ㅎ, ㅅ, ㅛ, ㅓ, ㅕ, ㅑ, ㅠ, {t: ▽, type: trans}]
+    - [{t: ▽, type: trans}, {t: ㅁ, h: GUI}, {t: ㄴ, h: ALT}, {t: ㅇ, h: CTRL}, {t: ㄱ, s: ㄲ, h: SHIFT}, ㄹ, ㅗ, {t: ㅡ, h: SHIFT}, {t: ㅏ, h: CTRL}, {t: ㅣ, h: ALT}, {t: ㅜ, h: GUI}, {t: ▽, type: trans}]
+    - [{t: ▽, type: trans}, {t: ㅋ, h: Button}, ㅌ, ㅊ, ㅆ, ㅍ, {t: ㅐ, s: ㅒ}, {t: ㅔ, s: ㅖ}, ",", ".", {t: /, h: Button}, "'"]
+    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]

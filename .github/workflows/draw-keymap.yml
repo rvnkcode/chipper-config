@@ -1,0 +1,23 @@
+name: Draw ZMK keymap
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/**/*.keymap"
+      - ".github/workflows/draw-keymap.yml"
+      - "keymap-drawer/chipper_korean.yaml"
+
+jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@v0.23.0
+    permissions:
+      contents: write
+    with:
+      keymap_patterns: "config/boards/shields/chipper/chipper.keymap"
+      install_version: "0.23.0"
+      # chipper has the same 3x6+3 split layout as Corne. Helper layers (Mac overrides, Mouse_Accel) are skipped.
+      draw_args: "chipper:'-k crkbd/rev1 -l LAYOUT_split_3x6_3 -s Base Korean Button Nav Mouse Media Num Sym Fun'"
+      # Jamo labels for the Korean layer (replaces the parsed one)
+      extra_keymap_yaml: "chipper:'keymap-drawer/chipper_korean.yaml'"
+      commit_message: "docs: update keymap drawing"
