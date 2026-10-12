@@ -8,14 +8,14 @@ parse_config:
     "&kp LALT": ALT
     "&kp LCTRL": CTRL
     "&kp LSHFT": SHIFT
-    "&hml LGUI A": {t: A, h: GUI}
-    "&hml LALT R": {t: R, h: ALT}
+    "&hml LALT A": {t: A, h: ALT}
+    "&hml LGUI R": {t: R, h: GUI}
     "&hml LCTRL S": {t: S, h: CTRL}
     "&hml LSHFT T": {t: T, h: SHIFT}
     "&hmr RSHFT N": {t: N, h: SHIFT}
     "&hmr RCTRL E": {t: E, h: CTRL}
-    "&hmr LALT I": {t: I, h: ALT}
-    "&hmr RGUI O": {t: O, h: GUI}
+    "&hmr RGUI I": {t: I, h: GUI}
+    "&hmr LALT O": {t: O, h: ALT}
     # Clipboard keys. keymap-drawer runs these keys through the keymap's preprocessor,
     # so the U_* macros from chipper.keymap work here.
     U_UND: UNDO

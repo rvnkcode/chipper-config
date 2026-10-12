@@ -8,22 +8,15 @@
 #define BASE    0
 #define MAC     1
 #define KOR     2
-#define KOR_MAC 3
-#define BUTTON  4
-#define NAV     5
-#define MOUSE   6
-#define MEDIA   7
-#define NUM     8
-#define SYM     9
-#define FUN     10
-#define ACCEL   11
-#define BTN_MAC 12
-#define NAV_MAC 13
-#define MOU_MAC 14
-#define MED_MAC 15
-#define NUM_MAC 16
-#define SYM_MAC 17
-#define FUN_MAC 18
+#define NAV     3
+#define MOUSE   4
+#define MEDIA   5
+#define NUM     6
+#define SYM     7
+#define FUN     8
+#define ACCEL   9
+#define NAV_MAC 10
+#define MOU_MAC 11
 
 // Key the OS uses to switch Korean <-> English input
 #define HAN_SWITCH LANG_HANGEUL
@@ -52,19 +45,19 @@
         cmb_ctrl_grave {
             bindings = <&kp LC(GRAVE)>;
             key-positions = <25 29>;
-            layers = <BASE MAC KOR KOR_MAC>;
+            layers = <BASE MAC KOR>;
         };
 
         cmb_alt_f4 {
             bindings = <&kp LA(F4)>;
             key-positions = <1 28>;
-            layers = <BASE MAC KOR KOR_MAC>;
+            layers = <BASE MAC KOR>;
         };
 
         cmb_caps_word {
             bindings = <&caps_word>;
             key-positions = <17 18>;
-            layers = <BASE MAC KOR KOR_MAC>;
+            layers = <BASE MAC KOR>;
         };
     };
 
@@ -91,7 +84,7 @@
             hold-trigger-on-release;
         };
 
-        // Layer-tap for thumbs and Z / slash
+        // Layer-tap for thumbs
         lth: layer_tap_hold {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mo>, <&kp>;
@@ -123,31 +116,30 @@
 
         base_layer {
             // | TAB  |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  '  | BSPC |
-            // | CTRL | A/G | R/A | S/C | T/S |  G  |   |  M  | N/S | E/C | I/A | O/G | HAN  |
-            // | SHFT | Z/B |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  | //B | GLOB |
+            // | CTRL | A/A | R/G | S/C | T/S |  G  |   |  M  | N/S | E/C | I/G | O/A | HAN  |
+            // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  | GLOB |
             //           | ESC/MED | SPC/NAV | TAB/MOU |   | ENT/SYM | BSPC/NUM | DEL/FUN |
-            // G=GUI A=ALT C=CTRL S=SHIFT B=BUTTON layer HAN=&han_tog
+            // Home row mods, index to pinky: S=SHIFT C=CTRL G=GUI(Cmd) A=ALT. HAN=&han_tog
 
             display-name = "Base";
             bindings = <
 &kp TAB    &kp Q            &kp W         &kp F          &kp P           &kp B             &kp J              &kp L           &kp U          &kp Y         &kp SQT              &kp BSPC
-&kp LCTRL  &hml LGUI A      &hml LALT R   &hml LCTRL S   &hml LSHFT T    &kp G             &kp M              &hmr RSHFT N    &hmr RCTRL E   &hmr LALT I   &hmr RGUI O          &han_tog
-&kp LSHFT  &lth BUTTON Z    &kp X         &kp C          &kp D           &kp V             &kp K              &kp H           &kp COMMA      &kp DOT       &lth BUTTON FSLH     &kp GLOBE
+&kp LCTRL  &hml LALT A      &hml LGUI R   &hml LCTRL S   &hml LSHFT T    &kp G             &kp M              &hmr RSHFT N    &hmr RCTRL E   &hmr RGUI I   &hmr LALT O          &han_tog
+&kp LSHFT  &kp Z            &kp X         &kp C          &kp D           &kp V             &kp K              &kp H           &kp COMMA      &kp DOT       &kp FSLH             &kp GLOBE
                                           &lth MEDIA ESC &lth NAV SPACE  &lth MOUSE TAB    &lth SYM ENTER     &lth NUM BSPC   &lth FUN DEL
             >;
         };
 
         mac_layer {
-            // Toggled from Media layer. Swaps GUI <-> CTRL on base home row mods.
-            // | A/C | R/A | S/G | T/S |   | N/S | E/G | I/A | O/C |
-            // Also enables the *_MAC conditional layers below.
+            // Toggled from Media layer. No keys of its own (all &trans):
+            // it enables the *_MAC conditional layers below (Cmd based clipboard keys).
 
             display-name = "Mac";
             bindings = <
-___  ___               ___  ___               ___  ___    ___  ___  ___               ___  ___               ___
-___  &hml LCTRL A      ___  &hml LGUI S       ___  ___    ___  ___  &hmr RGUI E       ___  &hmr RCTRL O      ___
-___  ___               ___  ___               ___  ___    ___  ___  ___               ___  ___               ___
-                            ___               ___  ___    ___  ___  ___
+___  ___  ___  ___  ___  ___    ___  ___  ___  ___  ___  ___
+___  ___  ___  ___  ___  ___    ___  ___  ___  ___  ___  ___
+___  ___  ___  ___  ___  ___    ___  ___  ___  ___  ___  ___
+               ___  ___  ___    ___  ___  ___
             >;
         };
 
@@ -156,47 +148,21 @@ ___  ___               ___  ___               ___  ___    ___  ___  ___         
             // |      |  ㅂ |  ㅈ |  ㄷ |  ㅎ |  ㅅ |   |  ㅛ |  ㅓ |  ㅕ |  ㅑ |  ㅠ |      |
             // |      |  ㅁ |  ㄴ |  ㅇ |  ㄱ |  ㄹ |   |  ㅗ |  ㅡ |  ㅏ |  ㅣ |  ㅜ | HAN  |
             // |      |  ㅋ |  ㅌ |  ㅊ |  ㅆ |  ㅍ |   |  ㅐ |  ㅔ |  ,  |  .  |  /  |  '   |
-            // Same home row mods / layer-taps as Base. Shift gives ㅃㅉㄸㄲㅒㅖ as in Dubeolsik.
+            // Same home row mods as Base. Shift gives ㅃㅉㄸㄲㅒㅖ as in Dubeolsik.
             // Drawing labels: keymap-drawer/chipper_korean.yaml (update together).
 
             display-name = "Korean";
             bindings = <
 ___  &kp Q            &kp W         &kp E          &kp G           &kp T         &kp Y   &kp J           &kp U          &kp I          &kp B              ___
-___  &hml LGUI A      &hml LALT S   &hml LCTRL D   &hml LSHFT R    &kp F         &kp H   &hmr RSHFT M    &hmr RCTRL K   &hmr LALT L    &hmr RGUI N        ___
-___  &lth BUTTON Z    &kp X         &kp C          &kp LS(T)       &kp V         &kp O   &kp P           &kp COMMA      &kp DOT        &lth BUTTON FSLH   &kp SQT
+___  &hml LALT A      &hml LGUI S   &hml LCTRL D   &hml LSHFT R    &kp F         &kp H   &hmr RSHFT M    &hmr RCTRL K   &hmr RGUI L    &hmr LALT N        ___
+___  &kp Z            &kp X         &kp C          &kp LS(T)       &kp V         &kp O   &kp P           &kp COMMA      &kp DOT        &kp FSLH           &kp SQT
                                     ___            ___             ___           ___     ___             ___
-            >;
-        };
-
-        kor_mac_layer {
-            // KOR + MAC: GUI <-> CTRL swap on Korean home row mods
-            display-name = "Korean_Mac";
-            bindings = <
-___  ___               ___  ___               ___  ___    ___  ___  ___               ___  ___               ___
-___  &hml LCTRL A      ___  &hml LGUI D       ___  ___    ___  ___  &hmr RGUI K       ___  &hmr RCTRL N      ___
-___  ___               ___  ___               ___  ___    ___  ___  ___               ___  ___               ___
-                            ___               ___  ___    ___  ___  ___
-            >;
-        };
-
-        button_layer {
-            // | UND CUT CPY PST RDO |   | RDO PST CPY CUT UND |
-            // | GUI ALT CTL SFT     |   |     SFT CTL ALT GUI |
-            // | UND CUT CPY PST RDO |   | RDO PST CPY CUT UND |
-            //       | MCLK LCLK RCLK |   | RCLK LCLK MCLK |
-
-            display-name = "Button";
-            bindings = <
-___  U_UND      U_CUT      U_CPY       U_PST       U_RDO        U_RDO       U_PST       U_CPY       U_CUT      U_UND      ___
-___  &kp LGUI   &kp LALT   &kp LCTRL   &kp LSHFT   U_NA         U_NA        &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI   ___
-___  U_UND      U_CUT      U_CPY       U_PST       U_RDO        U_RDO       U_PST       U_CPY       U_CUT      U_UND      ___
-                           &mkp MCLK   &mkp LCLK   &mkp RCLK    &mkp RCLK   &mkp LCLK   &mkp MCLK
             >;
         };
 
         nav_layer {
             // | BOOT                |   | RDO  PST  CPY  CUT  UND |
-            // | GUI ALT CTL SFT     |   | LEFT DOWN UP   RGHT CAPW |
+            // | ALT GUI CTL SFT     |   | LEFT DOWN UP   RGHT CAPW |
             // |                     |   | HOME PGDN PGUP END  INS  |
             //                       |   | ENT  BSPC DEL |
             // Miryoku vi variant: arrows on QWERTY h j k l positions
@@ -204,7 +170,7 @@ ___  U_UND      U_CUT      U_CPY       U_PST       U_RDO        U_RDO       U_PS
             display-name = "Nav";
             bindings = <
 ___  &td_boot  U_NA       U_NA        U_NA        U_NA         U_RDO        U_PST       U_CPY        U_CUT        U_UND        ___
-___  &kp LGUI  &kp LALT   &kp LCTRL   &kp LSHFT   U_NA         &kp LEFT     &kp DOWN    &kp UP       &kp RIGHT    &caps_word   ___
+___  &kp LALT  &kp LGUI   &kp LCTRL   &kp LSHFT   U_NA         &kp LEFT     &kp DOWN    &kp UP       &kp RIGHT    &caps_word   ___
 ___  U_NA      U_NA       U_NA        U_NA        U_NA         &kp HOME     &kp PG_DN   &kp PG_UP    &kp END      &kp INS      ___
                           U_NA        U_NA        U_NA         &kp ENTER    &kp BSPC    &kp DEL
             >;
@@ -212,7 +178,7 @@ ___  U_NA      U_NA       U_NA        U_NA        U_NA         &kp HOME     &kp 
 
         mouse_layer {
             // | BOOT                |   | RDO  PST  CPY  CUT  UND |
-            // | GUI ALT CTL SFT ACC |   | MS_L MS_D MS_U MS_R      |
+            // | ALT GUI CTL SFT ACC |   | MS_L MS_D MS_U MS_R      |
             // |                     |   | WH_L WH_D WH_U WH_R      |
             //                       |   | RCLK LCLK MCLK |
             // ACC = hold for faster pointer (Mouse_Accel layer)
@@ -221,7 +187,7 @@ ___  U_NA      U_NA       U_NA        U_NA        U_NA         &kp HOME     &kp 
             display-name = "Mouse";
             bindings = <
 ___  &td_boot  U_NA       U_NA        U_NA        U_NA         U_RDO            U_PST            U_CPY          U_CUT             U_UND   ___
-___  &kp LGUI  &kp LALT   &kp LCTRL   &kp LSHFT   &mo ACCEL    &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   U_NA    ___
+___  &kp LALT  &kp LGUI   &kp LCTRL   &kp LSHFT   &mo ACCEL    &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   U_NA    ___
 ___  U_NA      U_NA       U_NA        U_NA        U_NA         &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP   &msc SCRL_RIGHT   U_NA    ___
                           U_NA        U_NA        U_NA         &mkp RCLK    &mkp LCLK        &mkp MCLK
             >;
@@ -229,16 +195,16 @@ ___  U_NA      U_NA       U_NA        U_NA        U_NA         &msc SCRL_LEFT   
 
         media_layer {
             // | BOOT MAC KOR        |   | BTCLR BT4                 |
-            // | GUI ALT CTL SFT     |   | PREV  VOL- VOL+ NEXT      |
+            // | ALT GUI CTL SFT     |   | PREV  VOL- VOL+ NEXT      |
             // |                     |   | BT0   BT1  BT2  BT3  OUT  |
             //                       |   | STOP  PLAY MUTE |
-            // MAC = toggle macOS mode
+            // MAC = toggle macOS mode (Cmd based clipboard keys)
             // KOR = toggle KOR layer only (resync when OS input method and layer disagree)
 
             display-name = "Media";
             bindings = <
 ___  &td_boot  &tog MAC   &tog KOR    U_NA        U_NA       &bt BT_CLR     &bt BT_SEL 4   U_NA            U_NA            U_NA           ___
-___  &kp LGUI  &kp LALT   &kp LCTRL   &kp LSHFT   U_NA         &kp C_PREV     &kp C_VOL_DN   &kp C_VOL_UP    &kp C_NEXT      U_NA           ___
+___  &kp LALT  &kp LGUI   &kp LCTRL   &kp LSHFT   U_NA         &kp C_PREV     &kp C_VOL_DN   &kp C_VOL_UP    &kp C_NEXT      U_NA           ___
 ___  U_NA      U_NA       U_NA        U_NA        U_NA         &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2    &bt BT_SEL 3    &out OUT_TOG   ___
                           U_NA        U_NA        U_NA         &kp C_STOP     &kp C_PP       &kp C_MUTE
             >;
@@ -246,14 +212,14 @@ ___  U_NA      U_NA       U_NA        U_NA        U_NA         &bt BT_SEL 0   &b
 
         num_layer {
             // | [  7  8  9  ] |   |              BOOT |
-            // | ;  4  5  6  = |   |   SFT CTL ALT GUI |
+            // | ;  4  5  6  = |   |   SFT CTL GUI ALT |
             // | `  1  2  3  \ |   |                   |
             //       | .  0  - |   |
 
             display-name = "Num";
             bindings = <
 ___  &kp LBKT   &kp N7  &kp N8   &kp N9   &kp RBKT     U_NA   U_NA        U_NA        U_NA       &td_boot   ___
-___  &kp SEMI   &kp N4  &kp N5   &kp N6   &kp EQUAL    U_NA   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI   ___
+___  &kp SEMI   &kp N4  &kp N5   &kp N6   &kp EQUAL    U_NA   &kp LSHFT   &kp LCTRL   &kp LGUI   &kp LALT   ___
 ___  &kp GRAVE  &kp N1  &kp N2   &kp N3   &kp BSLH     U_NA   U_NA        U_NA        U_NA       U_NA       ___
                         &kp DOT  &kp N0   &kp MINUS    U_NA   U_NA        U_NA
             >;
@@ -261,14 +227,14 @@ ___  &kp GRAVE  &kp N1  &kp N2   &kp N3   &kp BSLH     U_NA   U_NA        U_NA  
 
         sym_layer {
             // | {  &  *  (  } |   |              BOOT |
-            // | :  $  %  ^  + |   |   SFT CTL ALT GUI |
+            // | :  $  %  ^  + |   |   SFT CTL GUI ALT |
             // | ~  !  @  #  | |   |                   |
             //       | (  )  _ |   |
 
             display-name = "Sym";
             bindings = <
 ___  &kp LBRC   &kp AMPS    &kp STAR     &kp LPAR     &kp RBRC     U_NA   U_NA        U_NA        U_NA       &td_boot   ___
-___  &kp COLON  &kp DLLR    &kp PRCNT    &kp CARET    &kp PLUS     U_NA   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI   ___
+___  &kp COLON  &kp DLLR    &kp PRCNT    &kp CARET    &kp PLUS     U_NA   &kp LSHFT   &kp LCTRL   &kp LGUI   &kp LALT   ___
 ___  &kp TILDE  &kp EXCL    &kp AT       &kp HASH     &kp PIPE     U_NA   U_NA        U_NA        U_NA       U_NA       ___
                             &kp LPAR     &kp RPAR     &kp UNDER    U_NA   U_NA        U_NA
             >;
@@ -276,14 +242,14 @@ ___  &kp TILDE  &kp EXCL    &kp AT       &kp HASH     &kp PIPE     U_NA   U_NA  
 
         fun_layer {
             // | F12 F7 F8 F9 PSCR |   |              BOOT |
-            // | F11 F4 F5 F6 SLCK |   |   SFT CTL ALT GUI |
+            // | F11 F4 F5 F6 SLCK |   |   SFT CTL GUI ALT |
             // | F10 F1 F2 F3 PAUS |   |                   |
             //       | APP SPC TAB |   |
 
             display-name = "Fun";
             bindings = <
 ___  &kp F12   &kp F7   &kp F8      &kp F9      &kp PSCRN         U_NA   U_NA        U_NA        U_NA       &td_boot   ___
-___  &kp F11   &kp F4   &kp F5      &kp F6      &kp SLCK          U_NA   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI   ___
+___  &kp F11   &kp F4   &kp F5      &kp F6      &kp SLCK          U_NA   &kp LSHFT   &kp LCTRL   &kp LGUI   &kp LALT   ___
 ___  &kp F10   &kp F1   &kp F2      &kp F3      &kp PAUSE_BREAK   U_NA   U_NA        U_NA        U_NA       U_NA       ___
                         &kp K_APP   &kp SPACE   &kp TAB           U_NA   U_NA        U_NA
             >;
@@ -301,92 +267,31 @@ ___  ___  ___  ___  ___  ___    ___  ___  ___  ___  ___  ___
         };
 
         // ---- macOS overrides (active via conditional_layers when MAC is on) ----
-        // Left mods  : GUI <-> CTRL at positions 13 / 15
-        // Right mods : CTRL <-> GUI at positions 20 / 22
-
-        button_mac_layer {
-            display-name = "Button_Mac";
-            bindings = <
-___  M_UND       M_CUT   M_CPY      M_PST   M_RDO     M_RDO   M_PST   M_CPY      M_CUT   M_UND       ___
-___  &kp LCTRL   ___     &kp LGUI   ___     ___       ___     ___     &kp LGUI   ___     &kp LCTRL   ___
-___  M_UND       M_CUT   M_CPY      M_PST   M_RDO     M_RDO   M_PST   M_CPY      M_CUT   M_UND       ___
-                         ___        ___     ___       ___     ___     ___
-            >;
-        };
+        // Cmd based clipboard keys on the Nav and Mouse layers
 
         nav_mac_layer {
             display-name = "Nav_Mac";
             bindings = <
-___  ___         ___  ___        ___  ___    M_RDO   M_PST   M_CPY   M_CUT   M_UND   ___
-___  &kp LCTRL   ___  &kp LGUI   ___  ___    ___     ___     ___     ___     ___     ___
-___  ___         ___  ___        ___  ___    ___     ___     ___     ___     ___     ___
-                      ___        ___  ___    ___     ___     ___
+___  ___  ___  ___  ___  ___    M_RDO   M_PST   M_CPY   M_CUT   M_UND   ___
+___  ___  ___  ___  ___  ___    ___     ___     ___     ___     ___     ___
+___  ___  ___  ___  ___  ___    ___     ___     ___     ___     ___     ___
+               ___  ___  ___    ___     ___     ___
             >;
         };
 
         mouse_mac_layer {
             display-name = "Mouse_Mac";
             bindings = <
-___  ___         ___  ___        ___  ___    M_RDO   M_PST   M_CPY   M_CUT   M_UND   ___
-___  &kp LCTRL   ___  &kp LGUI   ___  ___    ___     ___     ___     ___     ___     ___
-___  ___         ___  ___        ___  ___    ___     ___     ___     ___     ___     ___
-                      ___        ___  ___    ___     ___     ___
-            >;
-        };
-
-        media_mac_layer {
-            display-name = "Media_Mac";
-            bindings = <
-___  ___         ___  ___        ___  ___    ___  ___  ___  ___  ___  ___
-___  &kp LCTRL   ___  &kp LGUI   ___  ___    ___  ___  ___  ___  ___  ___
-___  ___         ___  ___        ___  ___    ___  ___  ___  ___  ___  ___
-                      ___        ___  ___    ___  ___  ___
-            >;
-        };
-
-        num_mac_layer {
-            display-name = "Num_Mac";
-            bindings = <
-___  ___  ___  ___  ___  ___    ___  ___  ___        ___  ___         ___
-___  ___  ___  ___  ___  ___    ___  ___  &kp LGUI   ___  &kp LCTRL   ___
-___  ___  ___  ___  ___  ___    ___  ___  ___        ___  ___         ___
-               ___  ___  ___    ___  ___  ___
-            >;
-        };
-
-        sym_mac_layer {
-            display-name = "Sym_Mac";
-            bindings = <
-___  ___  ___  ___  ___  ___    ___  ___  ___        ___  ___         ___
-___  ___  ___  ___  ___  ___    ___  ___  &kp LGUI   ___  &kp LCTRL   ___
-___  ___  ___  ___  ___  ___    ___  ___  ___        ___  ___         ___
-               ___  ___  ___    ___  ___  ___
-            >;
-        };
-
-        fun_mac_layer {
-            display-name = "Fun_Mac";
-            bindings = <
-___  ___  ___  ___  ___  ___    ___  ___  ___        ___  ___         ___
-___  ___  ___  ___  ___  ___    ___  ___  &kp LGUI   ___  &kp LCTRL   ___
-___  ___  ___  ___  ___  ___    ___  ___  ___        ___  ___         ___
-               ___  ___  ___    ___  ___  ___
+___  ___  ___  ___  ___  ___    M_RDO   M_PST   M_CPY   M_CUT   M_UND   ___
+___  ___  ___  ___  ___  ___    ___     ___     ___     ___     ___     ___
+___  ___  ___  ___  ___  ___    ___     ___     ___     ___     ___     ___
+               ___  ___  ___    ___     ___     ___
             >;
         };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-
-        kor_mac {
-            if-layers = <KOR MAC>;
-            then-layer = <KOR_MAC>;
-        };
-
-        button_mac {
-            if-layers = <BUTTON MAC>;
-            then-layer = <BTN_MAC>;
-        };
 
         nav_mac {
             if-layers = <NAV MAC>;
@@ -396,26 +301,6 @@ ___  ___  ___  ___  ___  ___    ___  ___  ___        ___  ___         ___
         mouse_mac {
             if-layers = <MOUSE MAC>;
             then-layer = <MOU_MAC>;
-        };
-
-        media_mac {
-            if-layers = <MEDIA MAC>;
-            then-layer = <MED_MAC>;
-        };
-
-        num_mac {
-            if-layers = <NUM MAC>;
-            then-layer = <NUM_MAC>;
-        };
-
-        sym_mac {
-            if-layers = <SYM MAC>;
-            then-layer = <SYM_MAC>;
-        };
-
-        fun_mac {
-            if-layers = <FUN MAC>;
-            then-layer = <FUN_MAC>;
         };
     };
 };
