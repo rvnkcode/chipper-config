@@ -124,7 +124,7 @@
             display-name = "Base";
             bindings = <
 &kp TAB    &kp Q            &kp W         &kp F          &kp P           &kp B             &kp J              &kp L           &kp U          &kp Y         &kp SQT              &kp BSPC
-&kp LCTRL  &hml LALT A      &hml LGUI R   &hml LCTRL S   &hml LSHFT T    &kp G             &kp M              &hmr RSHFT N    &hmr RCTRL E   &hmr RGUI I   &hmr LALT O          &han_tog
+&kp LCTRL  &hml LALT A      &hml LGUI R   &hml LCTRL S   &hml LSHFT T    &kp G             &kp M              &hmr RSHFT N    &hmr LCTRL E   &hmr RGUI I   &hmr LALT O          &han_tog
 &kp LSHFT  &kp Z            &kp X         &kp C          &kp D           &kp V             &kp K              &kp H           &kp COMMA      &kp DOT       &kp FSLH             &kp GLOBE
                                           &lth MEDIA ESC &lth NAV SPACE  &lth MOUSE TAB    &lth SYM ENTER     &lth NUM BSPC   &lth FUN DEL
             >;
@@ -154,7 +154,7 @@ ___  ___  ___  ___  ___  ___    ___  ___  ___  ___  ___  ___
             display-name = "Korean";
             bindings = <
 ___  &kp Q            &kp W         &kp E          &kp G           &kp T         &kp Y   &kp J           &kp U          &kp I          &kp B              ___
-___  &hml LALT A      &hml LGUI S   &hml LCTRL D   &hml LSHFT R    &kp F         &kp H   &hmr RSHFT M    &hmr RCTRL K   &hmr RGUI L    &hmr LALT N        ___
+___  &hml LALT A      &hml LGUI S   &hml LCTRL D   &hml LSHFT R    &kp F         &kp H   &hmr RSHFT M    &hmr LCTRL K   &hmr RGUI L    &hmr LALT N        ___
 ___  &kp Z            &kp X         &kp C          &kp LS(T)       &kp V         &kp O   &kp P           &kp COMMA      &kp DOT        &kp FSLH           &kp SQT
                                     ___            ___             ___           ___     ___             ___
             >;

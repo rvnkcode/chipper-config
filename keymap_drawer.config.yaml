@@ -13,7 +13,7 @@ parse_config:
     "&hml LCTRL S": {t: S, h: CTRL}
     "&hml LSHFT T": {t: T, h: SHIFT}
     "&hmr RSHFT N": {t: N, h: SHIFT}
-    "&hmr RCTRL E": {t: E, h: CTRL}
+    "&hmr LCTRL E": {t: E, h: CTRL}
     "&hmr RGUI I": {t: I, h: GUI}
     "&hmr LALT O": {t: O, h: ALT}
     # Clipboard keys. keymap-drawer runs these keys through the keymap's preprocessor,
