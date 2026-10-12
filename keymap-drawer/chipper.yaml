@@ -107,7 +107,7 @@ layers:
   - F
   - H
   - {t: M, h: RSHFT}
-  - {t: K, h: RCTRL}
+  - {t: K, h: CTRL}
   - {t: L, h: RGUI}
   - {t: N, h: ALT}
   - {t: ▽, type: trans}
@@ -147,12 +147,12 @@ layers:
   - GUI
   - CTRL
   - SHIFT
-  - ''
+  - HAN
   - LEFT
   - DOWN
   - UP
   - RIGHT
-  - CAPW
+  - CAPS
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
