@@ -162,7 +162,7 @@ ___  &kp Z            &kp X         &kp C          &kp LS(T)       &kp V        
 
         nav_layer {
             // | BOOT                |   | RDO  PST  CPY  CUT  UND |
-            // | ALT GUI CTL SFT     |   | LEFT DOWN UP   RGHT CAPW |
+            // | ALT GUI CTL SFT HAN |   | LEFT DOWN UP   RGHT CAPS |
             // |                     |   | HOME PGDN PGUP END  INS  |
             //                       |   | ENT  BSPC DEL |
             // Miryoku vi variant: arrows on QWERTY h j k l positions
@@ -170,7 +170,7 @@ ___  &kp Z            &kp X         &kp C          &kp LS(T)       &kp V        
             display-name = "Nav";
             bindings = <
 ___  &td_boot  U_NA       U_NA        U_NA        U_NA         U_RDO        U_PST       U_CPY        U_CUT        U_UND        ___
-___  &kp LALT  &kp LGUI   &kp LCTRL   &kp LSHFT   U_NA         &kp LEFT     &kp DOWN    &kp UP       &kp RIGHT    &caps_word   ___
+___  &kp LALT  &kp LGUI   &kp LCTRL   &kp LSHFT   &han_tog     &kp LEFT     &kp DOWN    &kp UP       &kp RIGHT    &kp CAPS     ___
 ___  U_NA      U_NA       U_NA        U_NA        U_NA         &kp HOME     &kp PG_DN   &kp PG_UP    &kp END      &kp INS      ___
                           U_NA        U_NA        U_NA         &kp ENTER    &kp BSPC    &kp DEL
             >;

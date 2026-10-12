@@ -26,6 +26,7 @@ parse_config:
     # Custom behaviors
     "&han_tog": HAN
     "&caps_word": CAPW
+    "&kp CAPS": CAPS
     "&td_boot": {t: BOOT, h: x2}
     # Mouse keys
     "&mkp LCLK": LCLK
